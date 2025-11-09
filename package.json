@@ -9,7 +9,8 @@
      "restart": "pm2 restart malvin-xd"
     },
   "dependencies": {
-    "@whiskeysockets/baileys": "npm:@dark-yasiya/baileys",          
+    "@whiskeysockets/baileys": "^7.0.0-rc.3",
+    "jimp": "^1.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
@@ -20,7 +21,6 @@
     "path": "^0.12.7",
     "megajs": "1.3.9",
     "pm2": "^5.4.0",
-    "async-mutex":"0.4.1",
-    "jimp": "^0.22.12"
+    "async-mutex":"0.4.1"
    }
 }
