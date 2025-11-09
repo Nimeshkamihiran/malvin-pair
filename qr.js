@@ -72,32 +72,31 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "NENO-XMD~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hey there, NENO XMD V3 User!* 👋🏻
-
-Thanks for using *NENO XMD V3* — your session has been successfully created!
-
-🔐 *Session ID:* Sent above  
-⚠️ *Keep it safe!* Do NOT share this ID with anyone.
-
-——————
-
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6BQQmFnSz7bmxefu40
-
-*💻 Source Code:*  
-Fork & explore the project on GitHub:  
-https://github.com/Nimeshkamihiran/NENO-XMD-V3
-
-——————
-
-> *© Powered by NIMESHKA MIHIRAN*
-Stay cool and hack smart. ✌🏻`;
+                        let desc = `
+╭─❖〔 🐉 *GODZILLA MD SESSION CREATED!* 〕❖─╮
+│ 👋🏻 *Hey there, GODZILLA MD User!*
+│ 
+│ ⚙️ Your session has been successfully created!  
+│ 🔐 *Session ID:* Sent above  
+│ ⚠️ *Keep it safe!* Never share it with anyone.  
+│ 
+│ 🌐 *Stay Updated:*  
+│ ✦ Join our official WhatsApp Channel  
+│   → https://whatsapp.com/channel/0029Vb6BQQmFnSz7bmxefu40  
+│ 
+│ 💻 *Source Code:*  
+│ ✦ Explore & Fork on GitHub  
+│   → https://github.com/Nimeshkamihiran/GODZILLA-MD.git  
+│ 
+╰───────────────────────────────❖╯
+> © Powered by *Nimeshka Mihiran* 🧠
+> Stay powerful — unleash the monster within. 🐲🔥
+`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "ɴᴇɴᴏ xᴍᴅ",
+title: "ɢᴏᴅᴢɪʟᴀ",
 thumbnailUrl: "https://files.catbox.moe/fk0uuz.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029Vb6BQQmFnSz7bmxefu40",
 mediaType: 1,
@@ -108,30 +107,31 @@ renderLargerThumbnail: true
 {quoted:code })
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `*Hey there, ɴᴇɴᴏ xᴍᴅ User!* 👋🏻
-
-Thanks for using *NENO XMD* — your session has been successfully created!
-
-🔐 *Session ID:* Sent above  
-⚠️ *Keep it safe!* Do NOT share this ID with anyone.
-
-——————
-
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6BQQmFnSz7bmxefu40
-
-*💻 Source Code:*  
-Fork & explore the project on GitHub:  
-https://github.com/Nimeshkamihiran/NENO-XMD-V3
-
-> *© Powered by Nimeshka Mihiran*
-Stay cool and hack smart. ✌🏻*`;
+                            let desc = `
+╭─❖〔 🐉 *GODZILLA MD SESSION CREATED!* 〕❖─╮
+│ 👋🏻 *Hey there, GODZILLA MD User!*
+│ 
+│ ⚙️ Your session has been successfully created!  
+│ 🔐 *Session ID:* Sent above  
+│ ⚠️ *Keep it safe!* Never share it with anyone.  
+│ 
+│ 🌐 *Stay Updated:*  
+│ ✦ Join our official WhatsApp Channel  
+│   → https://whatsapp.com/channel/0029Vb6BQQmFnSz7bmxefu40  
+│ 
+│ 💻 *Source Code:*  
+│ ✦ Explore & Fork on GitHub  
+│   → https://github.com/Nimeshkamihiran/GODZILLA-MD.git  
+│ 
+╰───────────────────────────────❖╯
+> © Powered by *Nimeshka Mihiran* 🧠
+> Stay powerful — unleash the monster within. 🐲🔥
+`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "ɴᴇɴᴏ xᴍᴅ ✅  ",
+title: "ɢᴏᴅᴢɪʟᴀ",
 thumbnailUrl: "https://files.catbox.moe/fk0uuz.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029Vb6BQQmFnSz7bmxefu40",
 mediaType: 2,
