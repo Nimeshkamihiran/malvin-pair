@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NENO XMD PAIR</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a4d3c 0%, #1a1a2e 50%, #0f3460 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 157, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 157, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0, 255, 157, 0.1) 0%, transparent 50%);
+      animation: particles 20s infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes particles {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-20px) scale(1.1); }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .box {
+      width: 420px;
+      max-width: 95vw;
+      padding: 40px 30px;
+      background: rgba(10, 77, 60, 0.3);
+      backdrop-filter: blur(20px);
+      border-radius: 25px;
+      border: 2px solid rgba(0, 255, 157, 0.2);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 50px rgba(0, 255, 157, 0.1);
+      animation: boxFloat 6s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 157, 0.05),
+        transparent
+      );
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes boxFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes shimmer {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      background: linear-gradient(135deg, #00ff9d 0%, #00cc7a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        0 0 30px rgba(0, 255, 157, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: iconPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes iconPulse {
+      0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
+      }
+      50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 50px rgba(0, 255, 157, 0.8);
+      }
+    }
+
+    .icon-wrapper i {
+      font-size: 35px;
+      color: #0a4d3c;
+    }
+
+    .centered-text {
+      text-align: center;
+      color: #00ff9d;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+      letter-spacing: 2px;
+    }
+
+    h6 {
+      text-align: center;
+      color: #b0ffdb;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #00ff9d;
+      font-size: 18px;
+      z-index: 1;
+    }
+
+    .input-container input {
+      width: 100%;
+      padding: 18px 20px 18px 55px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 157, 0.3);
+      border-radius: 15px;
+      color: #ffffff;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .input-container input:focus {
+      outline: none;
+      border-color: #00ff9d;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+    }
+
+    .input-container input::placeholder {
+      color: rgba(176, 255, 219, 0.5);
+    }
+
+    /* Remove number input arrows */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    .input-container button {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #00ff9d 0%, #00cc7a 100%);
+      color: #0a4d3c;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 255, 157, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .input-container button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .input-container button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .input-container button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 255, 157, 0.5);
+    }
+
+    .input-container button:active {
+      transform: translateY(0);
+    }
+
+    #waiting-message {
+      display: none;
+      color: #00ff9d;
+      font-weight: 600;
+      text-align: center;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    #pair {
+      min-height: 50px;
+      margin-top: 15px;
+    }
+
+    #pair a {
+      color: #b0ffdb;
+      font-weight: 600;
+    }
+
+    #copy {
+      display: inline-block;
+      padding: 15px 25px;
+      background: linear-gradient(135deg, rgba(0, 255, 157, 0.2) 0%, rgba(0, 204, 122, 0.2) 100%);
+      border: 2px solid #00ff9d;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    #copy:hover {
+      background: linear-gradient(135deg, rgba(0, 255, 157, 0.3) 0%, rgba(0, 204, 122, 0.3) 100%);
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 157, 0.4);
+    }
+
+    #copy span {
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+    }
+
+    .glowing-text {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #00ff9d;
+      text-shadow: 
+        0 0 10px rgba(0, 255, 157, 0.8),
+        0 0 20px rgba(0, 255, 157, 0.6),
+        0 0 30px rgba(0, 255, 157, 0.4);
+      animation: glow 3s infinite;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 
+          0 0 10px rgba(0, 255, 157, 0.8),
+          0 0 20px rgba(0, 255, 157, 0.6),
+          0 0 30px rgba(0, 255, 157, 0.4);
+      }
+      50% {
+        text-shadow: 
+          0 0 15px rgba(0, 255, 157, 1),
+          0 0 30px rgba(0, 255, 157, 0.8),
+          0 0 45px rgba(0, 255, 157, 0.6);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .box {
+        padding: 30px 20px;
+      }
+
+      .centered-text {
+        font-size: 24px;
+      }
+
+      h6 {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="box" id="box">
+        <div id="text">
+          <div class="icon-wrapper">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h2 class="centered-text">NENO XMD PAIR</h2>           
+          <h6>⚙️ Enter your number with country code ⚙️</h6>
+          <div class="input-container">
+            <div class="input-wrapper">
+              <i class="fa-solid fa-phone"></i>
+              <input placeholder="94*********" type="number" id="number" name="">
+            </div>
+            <button id="submit">
+              <span>Get Code</span>
+            </button>
+          </div>
+         
+          <a id="waiting-message" class="centered-text">⏳ Processing...</a>
+          <br>
+          <main id="pair"></main>
+        </div>
+      </div>
+    </div>
+    <div class="glowing-text">⚡ Powered By Nimeshka Mihiran ⚡</div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+    let box = document.getElementById("box");
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      obj.innerHTML = '<span style="color:#00ff9d;">✓ COPIED</span>';
+      setTimeout(() => {
+        obj.innerHTML = text;
+      }, 1000);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!c.value) {
+        a.innerHTML = '<a style="color:#ff6b6b;font-weight:bold">⚠ Enter your whatsapp number with country code.</a><br><br>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<a style="color:#ff6b6b;font-weight:bold">❌ Invalid number format</a><br><br>';
+      } else {
+        const bc = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = bc.split('');
+        cc.map(num => {
+          bbc += num;
+          if (bbc.length == 3) {
+            bb += " " + num;
+          } else if (bbc.length == 8) {
+            bb += " " + num;
+          } else {
+            bb += num;
+          }
+        });
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:#00ff9d;font-size:18px;font-weight:600";
+        a.innerHTML = '<a style="color:#00ff9d;font-weight:bold">⏳ Please wait... </a><br><br>';
+        let { data } = await axios(`/code?number=${bc}`);
+        let code = data.code || "Service Unavailable";
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:#00ff9d;font-weight:bold" size="5">CODE: <span style="color:#ffffff;font-weight:bold">' + code + '</span></font><br><br><a style="color:#b0ffdb;font-size:12px">Click on code to copy</a><br>';
+      }
+    });
+  </script>
+</body>
+</html>
